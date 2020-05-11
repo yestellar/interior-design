@@ -1,0 +1,22 @@
+{
+  "name": "KDL_Portfolio",
+  "version": "1.0.0",
+  "description": "Personal web page of interior designer in London",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp default"
+  },
+  "author": "Dmytro Smirnov",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

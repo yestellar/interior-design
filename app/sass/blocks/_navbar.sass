@@ -1,0 +1,78 @@
+.header
+  height: 100%
+  position: relative
+
+.navbar
+  display: flex
+  align-items: center
+  height: 50px
+  background-color: $main
+  border-bottom: 1px solid $main
+  padding: 30px 40px
+  position: absolute
+  width: 100%
+  &__menu
+    display: flex
+    list-style: none
+    flex: 1
+    li
+      margin-right: 25px
+      a
+        color: $text
+        text-decoration: none
+  &__logo
+    a
+      color: $text
+      text-decoration: none
+  &__icons
+    &--icon svg
+      color: $text
+
+.head-slider
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  border: 2px solid $text
+  &__photo-container
+    position: relative
+    width: 648px
+    height: 432px
+    overflow: hidden
+  &__photo
+    position: absolute
+    transform: translateX(-100%)
+    &_active
+      animation-name: sliderShow
+      animation-duration: 1s
+      animation-fill-mode: forwards
+  &__arrow
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 20%
+    background-color: rgba($text, 0.2)
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    font-size: 25px
+    color: rgba($text, 0.7)
+    &.arrow-left
+      left: 0px
+      animation-name: arrowGlidinToLeft
+
+    &.arrow-right
+      right: 0px
+
+@keyframes sliderShow
+  from
+     transform: translateX(-100%)
+  to
+    transform: translateX(0)
+
+@keyframes arrowGlidinToLeft
+  from
+    transform: translateX(0)
+    to
+      transform: translateX(-10px)
