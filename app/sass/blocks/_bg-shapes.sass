@@ -1,0 +1,34 @@
+.background-shapes
+  position: absolute
+  display: flex
+  width: 100%
+  height: 100%
+  justify-content: center
+  &__shape
+    width: 300px
+    height: 100%
+    border-left: 1px solid rgba(#fff, 0.1)
+    &:last-child
+      border-right: 1px solid rgba(#fff, 0.1)
+
+@media screen and (max-width : 1200px)
+  .background-shapes
+    &__shape
+      width: 240px
+
+@media screen and (max-width : 992px)
+  .background-shapes
+    &__shape
+      width: 192px
+
+@media only screen and (max-width : 768px)
+  .background-shapes
+    &__shape
+      width: 120px
+
+@media only screen and (max-width : 480px)
+  .background-shapes
+    &__shape
+      width: 80px
+
+// @media only screen and (max-width : 320px)

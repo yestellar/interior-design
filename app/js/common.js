@@ -1,45 +1,78 @@
 $(function() {
+  // start
 
-  var currentSlide = 1
-  var sliderSize = 3
+var slidesAmount = 3
+var nextSlideIndex = 0
 
-  console.log($('.head-slider__photo'))
+var slides = {
+  photos: $('.head-slider__photo'),
+  schemes: $('.head-slider__scheme'),
+  texts: $('.head-slider__text'),
+  points: $('.head-slider__point')
+}
 
-  $('#slider_left').click(function() {
-    sliderHandler(-1)
-  })
-  $('#slider_right').click(function() {
-    sliderHandler(1)
-  })
+function moveSlideIndex(moveSide) {
+  nextSlideIndex += moveSide
+  if (nextSlideIndex > slidesAmount - 1) nextSlideIndex = 0
+  else if (nextSlideIndex < 0) nextSlideIndex = 2
+}
 
-  function sliderHandler(eventIndex) {
-    var prevSlide = currentSlide
-    currentSlide += eventIndex
-    if (currentSlide > sliderSize) {
-      currentSlide = 1
+function changeSlideByIndex(nextSlideIndex) {
+  changeSectionState(slides.photos, 'photo', nextSlideIndex)
+  changeSectionState(slides.schemes, 'scheme', nextSlideIndex)
+  changeSectionState(slides.texts, 'text', nextSlideIndex)
+  changeSectionState(slides.points, 'point', nextSlideIndex)
+}
+
+function changeSectionState(objList, objListName, nextSlideIndex) {
+  // actions to hide active slide
+  objList.each(function(index) {
+    if ($(this).hasClass('head-slider__' + objListName + '_active')) {
+
+      $(this).removeClass('head-slider__' + objListName + '_active')
+      $(this).addClass('head-slider__' + objListName + '_hide')
+
+      var self = $(this)
+      setTimeout(function() {
+        self.removeClass('head-slider__' + objListName + '_hide')
+      }, 1000)
     }
-    else if (currentSlide < 1) {
-      currentSlide = 3
+  })
+  // actions to show next slide
+  objList.each(function(index) {
+    if (index == nextSlideIndex) {
+      $(this).addClass('head-slider__' + objListName + '_active')
     }
-    $('.head-slider__photo').each(function(index) {
-      if (index+1 == currentSlide) {
-        $(this).addClass('head-slider__photo_active')
-      } else {
-        $(this).removeClass('head-slider__photo_active')
-      }
-    })
-    console.log(currentSlide);
-  }
+  })
+}
 
-  // $('#slider_left').click(function() {
-  //   $('.head-slider__photo').each(function(index) {
-  //     $(this).addClass('head-slider__photo_active')
-  //   })
-  // })
-  //
-  // $('#slider_left').click(function() {
-  //   console.log('click');
-  // })
-	// Custom JS
+var changeSlideAuto = setInterval(function() {
+  moveSlideIndex(1)
+  changeSlideByIndex(nextSlideIndex)
+}, 4000)
 
-});
+// arrows handling
+$('.arrow-left').click(function() {
+  moveSlideIndex(-1)
+  changeSlideByIndex(nextSlideIndex)
+  clearInterval(changeSlideAuto)
+})
+$('.arrow-right').click(function() {
+  moveSlideIndex(1)
+  changeSlideByIndex(nextSlideIndex)
+  clearInterval(changeSlideAuto)
+})
+// points handling
+slides.points.each(function(index) {
+  var self = $(this)
+
+  $(this).click(function() {
+    self.addClass()
+    nextSlideIndex = index
+    changeSlideByIndex(nextSlideIndex)
+    clearInterval(changeSlideAuto)
+  })
+})
+
+// end
+})

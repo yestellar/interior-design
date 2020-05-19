@@ -1,0 +1,50 @@
+// @keyframes for head slider animation
+@keyframes mainSliderShow
+  from
+     transform: translateX(-100%)
+  to
+    transform: translateX(0)
+
+@keyframes mainSliderHide
+  from
+    transform: translateX(0)
+  to
+     transform: translateX(-100%)
+
+@keyframes schemeSliderShow
+  from
+    transform: translate(-20%, 0)
+    opacity: 0
+  to
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes schemeSliderHide
+  from
+    transform: translate(0, 0)
+    opacity: 1
+  to
+    transform: translate(-20%, 0)
+    opacity: 0
+
+@keyframes textSliderShow
+  from
+    transform: translate(-20px, 0)
+    opacity: 0
+  to
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes textSliderHide
+  from
+    transform: translate(0, 0)
+    opacity: 1
+  to
+    transform: translate(20px, 0)
+    opacity: 0
+
+@keyframes arrowGlidinToLeft
+  from
+    transform: translateX(0)
+    to
+      transform: translateX(-10px)
