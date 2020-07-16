@@ -25,7 +25,12 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/fontawesome/js/all.min.js',
-		'app/js/common.js', // Всегда в конце
+		'app/js/scroll.js',
+		'app/js/slider.js',
+		'app/js/parallax.js',
+		'app/js/about.js',
+		'app/js/brands.js',
+		'app/js/contact.js',
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify()) // Минимизировать весь js (на выбор)
@@ -50,7 +55,15 @@ gulp.task('code', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass'));
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('js'));
+	gulp.watch([
+		'libs/**/*.js',
+		'app/js/scroll.js',
+		'app/js/slider.js',
+		'app/js/parallax.js',
+		'app/js/about.js',
+		'app/js/brands.js',
+		'app/js/contact.js',
+	], gulp.parallel('js'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 

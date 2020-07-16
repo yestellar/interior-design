@@ -1,0 +1,97 @@
+.gallery
+  background-color: transparent
+  display: flex
+  flex-wrap: wrap
+  overflow: hidden
+  background-color: rgb(3, 3, 3)
+  position: relative
+  &__photo-container
+    width: 25%
+    max-height: 350px
+    position: relative
+    box-sizing: border-box
+    z-index: 1
+    &_logo
+      display: none
+      margin: auto 0
+      opacity: 0.7
+      font-family: 'Montserrat', sans-serif
+      &--wrapper
+        display: flex
+        justify-content: center
+      &:hover
+        &::before
+          opacity: 0 !important
+    &_logo-title
+      font-size: 16px
+      width: 75px
+      margin-left: 5px
+      transform: translateY(-2px)
+      .second-word
+        letter-spacing: 2.5px
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.4)
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+      transition: opacity .1s linear
+    &::after
+      content: "" attr(name) ""
+      display: flex
+      justify-content: center
+      position: absolute
+      width: 100%
+      opacity: 0
+      letter-spacing: 2px
+      font-size: 20px
+      font-weight: light
+      color: #FFFFFF
+      text-shadow: 2px 2px 0px rgba(#000, 0.7)
+      font-family: 'Montserrat', sans-serif
+      padding: 0 50px
+      line-height: 1.3em
+      transform: translateY(50%)
+      text-align: center
+    &:hover
+      &::before
+        opacity: 1
+      &::after
+        animation-name: gallerylabelShow
+        animation-delay: .1s
+        animation-duration: .2s
+        animation-fill-mode: forwards
+  &__photo
+    width: 100%
+    min-height: 100%
+    object-fit: cover
+  &__photo-label
+    position: absolute
+    bottom: 0
+    left: 50%
+    bottom: 30%
+
+@media screen and (max-width: 1300px)
+  .gallery
+    &__photo-container
+      &::after
+        font-size: 15px
+
+@media screen and (max-width : 1200px)
+  .gallery
+    &__photo-container
+      width: 33.33%
+      &_logo
+        display: inline-block
+
+@media only screen and (max-width : 480px)
+  .gallery
+    &__photo-container
+      width: 50%
+      &_logo
+        display: none
+      &::after
+        font-size: 14px

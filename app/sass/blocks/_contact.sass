@@ -1,0 +1,142 @@
+.contact
+  background: #000
+  position: relative
+  &__container
+    position: relative
+    padding: 100px 0
+    width: 1200px
+    margin: 0 auto
+    display: flex
+  &__title-container
+    width: 50%
+    padding-left: 20px
+    .title
+      font-family: 'Montserrat', sans-serif
+      letter-spacing: 1px
+      color: #fff
+      font-weight: 400
+      line-height: 1.2em
+      font-size: 48px
+      width: 100%
+      margin: 0 auto
+      position: relative
+      &::after
+        content: ''
+        display: block
+        position: absolute
+        bottom: -15px
+        width: 80px
+        height: 1px
+        background-color: rgba(#fff, 0.5)
+    .description
+      margin-top: 30px
+      width: 90%
+      color: rgba(#fff, 0.8)
+      font-style: italic
+      font-size: 17px
+      letter-spacing: 1px
+      line-height: 1.5em
+    .image
+      opacity: 0.8
+      width: 100%
+      transform: translateY(-200px)
+  &__form-container
+    width: 50%
+    height: 100%
+    position: relative
+  &__form
+    &-textarea
+      padding: 17px 20px
+      line-height: 1.5em
+      color: rgba(#fff, 1)
+      letter-spacing: 1px
+      width: 100%
+      height: 200px
+      background-color: #1c1c1c
+      resize: vertical
+      border: none
+    &-input
+      width: 100%
+      margin-top: 15px
+      height: 40px
+      padding: 0 20px
+      background-color: #1c1c1c
+      border: none
+      color: rgba(#fff, 1)
+      letter-spacing: 1px
+    &-button
+      background-color: transparent
+      border: none
+      color: #fff
+      font-family: 'Montserrat', sans-serif
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 13px
+      padding: 0
+      letter-spacing: 2px
+      position: relative
+      margin-top: 20px
+      margin-left: 20px
+      &:hover
+        cursor: pointer
+        .contact__form-button_stripes
+          background-position: 20px 0
+      &_stripes
+        display: block
+        position: absolute
+        top: 10px
+        left: 0px
+        height: 7px
+        width: 98%
+        opacity: .7
+        background-image: url('../img/button_stripes_pattern.png')
+        background-repeat: repeat
+        transition: .5s
+  &__result-container
+    position: absolute
+    bottom: -30px
+    left: 20px
+
+@media screen and (max-width : 1200px)
+  .contact
+    &__container
+      width: 960px
+    &__title-container
+      .title
+        font-size: 40px
+        &::after
+          width: 65px
+
+@media screen and (max-width : 992px)
+  .contact
+    &__container
+      width: 768px
+    &__title-container
+      .title
+        font-size: 36px
+        &::after
+          width: 75px
+
+@media only screen and (max-width : 768px)
+  .contact
+    &__container
+      width: 480px
+      flex-direction: column
+    &__title-container
+      width: 100%
+      .title
+        &::after
+          width: 60px
+    &__form-container
+      width: 100%
+
+@media only screen and (max-width : 480px)
+  .contact
+    &__container
+      width: 320px
+    &__title-container
+      width: 100%
+      .title
+        font-size: 30px
+        &::after
+          width: 60px

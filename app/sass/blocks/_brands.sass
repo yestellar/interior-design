@@ -1,0 +1,90 @@
+.brands
+  padding: 80px 0 60px
+  background-color: #1c1c1c
+  display: flex
+  justify-content: center
+  align-items: center
+  &__window
+    overflow: hidden
+    width: 1000px
+  &__container
+    display: flex
+    justify-content: flex-start
+    transition: transform .3s linear
+    &_push
+      animation-name: pushContainer225
+      animation-duration: .8s
+      animation-fill-mode: forwards
+  &__block
+    width: 100px
+    flex-direction: column
+    transition: transform .5s ease
+    margin-right: 125px
+  &__logo
+    height: 100px
+    opacity: 0.9
+  &__name
+    display: flex
+    text-align: center
+    justify-content: center
+    height: 100px
+    font-family: 'Montserrat', sans-serif
+    line-height: 1.5em
+    align-items: center
+
+@media screen and (max-width : 1200px)
+  .brands
+    padding: 50px 0 35px
+    &__window
+      width: 800px
+    &__logo
+      width: 80px
+      height: 80px
+    &__block
+      width: 100px
+      flex-direction: column
+      transition: transform .5s ease
+      margin-right: 160px
+    &__container
+      &_push
+        animation-name: pushContainer240
+
+@media screen and (max-width : 992px)
+  .brands
+    padding: 50px 0 35px
+    &__window
+      width: 656px
+    &__block
+      margin-right: 112px
+    &__container
+      &_push
+        animation-name: pushContainer192
+
+@media screen and (max-width : 768px)
+  .brands
+    padding: 50px 0 50px
+    &__window
+      width: 424px
+    &__name
+      display: none
+    &__block
+      margin-right: 56px
+    &__logo
+      width: 64px
+      height: 64px
+    &__container
+      &_push
+        animation-name: pushContainer120
+
+@media screen and (max-width : 480px)
+  .brands
+    &__window
+      width: 288px
+    &__logo
+      width: 48px
+      height: 48px
+    &__block
+      margin-right: 32px
+    &__container
+      &_push
+        animation-name: pushContainer80

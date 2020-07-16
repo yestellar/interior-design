@@ -1,0 +1,165 @@
+.footer
+  background-color: #000
+  border-top: 1px solid rgba(#fff, 0.2)
+  &-container
+    padding: 50px 0
+    width: 1200px
+    margin: 0 auto
+    display: flex
+    border-bottom: none
+  &__section
+    width: 25%
+    display: flex
+    height: 145px
+    flex-direction: column
+    padding-left: 20px
+  &__section-title
+    font-weight: 400
+    font-family: 'Montserrat', sans-serif
+    letter-spacing: 1px
+    font-size: 14px
+    position: relative
+    margin-bottom: 20px
+    &::after
+      content: ''
+      position: absolute
+      bottom: -10px
+      display: block
+      width: 20px
+      height: 1px
+      background-color: rgba(#fff, 0.6)
+  // &__logo-container
+  &__logo
+    display: flex
+    margin-top: 5px
+    .name
+      width: 77px
+      color: $text
+      font-size: 24px
+      font-family: 'Montserrat', sans-serif
+      margin-left: 5px
+      transform: translateY(-3px)
+      &__second-word
+        letter-spacing: 4px
+  // &__contacts-container
+  &__contacts
+    display: flex
+    flex-direction: column
+    line-height: 2em
+    letter-spacing: 1px
+    font-family: 'Montserrat', sans-serif
+    .link
+      color: #fff
+      text-decoration: none
+  // &__menu-container
+  &__menu
+    width: 150px
+    margin-top: 5px
+    background-color: #1c1c1c
+    color: $text
+    font-size: 14px
+    letter-spacing: 1px
+    border: none
+    padding: 4px 5px
+    appearance: none
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat
+    background-position-x: 100%
+    background-position-y: -1px
+    &-button
+      background-color: transparent
+      border: none
+      color: #fff
+      font-family: 'Montserrat', sans-serif
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 10px
+      padding: 0
+      letter-spacing: 2px
+      position: relative
+      margin-top: 15px
+      margin-left: 0px
+      width: 55px
+      &:hover
+        cursor: pointer
+        .footer__menu-button_stripes
+          background-position: 20px 0
+      &_stripes
+        display: block
+        position: absolute
+        top: 9px
+        left: -2px
+        height: 5px
+        width: 97%
+        opacity: .7
+        background-image: url('../img/button_stripes_pattern.png')
+        background-repeat: repeat
+        transition: .5s
+  // &__developer-container
+  &__developer
+    letter-spacing: 1px
+    font-family: 'Montserrat', sans-serif
+    font-size: 16px
+    .logo
+      margin-top: 5px
+      width: 115px
+
+@media screen and (max-width : 1200px)
+  .footer-container
+    width: 992px
+
+@media screen and (max-width : 992px)
+  .footer
+    &-container
+      width: 768px
+    &__section
+      line-height: 1.3em
+      height: 155px
+      &-title
+        height: 40px
+        display: flex
+        align-items: center
+    // &__contacts-container
+    &__contacts
+      font-size: 13px
+      .link
+        color: #fff
+        text-decoration: none
+    // &__menu-container
+    &__menu
+      font-size: 12px
+    // &__developer-container
+    &__developer
+      .logo
+        width: 120px
+
+@media screen and (max-width : 768px)
+  .footer
+    &-container
+      width: 480px
+      flex-wrap: wrap
+    &__section
+      width: 50%
+      &-title
+        height: auto
+
+@media screen and (max-width : 480px)
+  .footer
+    &-container
+      padding: 40px 0
+      width: 320px
+    &__section
+      padding-left: 10px
+      &-title
+        height: 40px
+    // &__menu-container
+    &__menu
+      width: 130px
+    // &__contacts-container
+    &__contacts
+      .link
+        letter-spacing: 0
+    // &__contacts-container
+    &__developer
+      .logo
+        width: 90px

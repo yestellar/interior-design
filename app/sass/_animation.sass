@@ -11,6 +11,7 @@
   to
      transform: translateX(-100%)
 
+
 @keyframes schemeSliderShow
   from
     transform: translate(-20%, 0)
@@ -26,6 +27,7 @@
   to
     transform: translate(-20%, 0)
     opacity: 0
+
 
 @keyframes textSliderShow
   from
@@ -43,8 +45,58 @@
     transform: translate(20px, 0)
     opacity: 0
 
-@keyframes arrowGlidinToLeft
+// @keyframes for gallery animation
+
+@keyframes gallerylabelShow
+  from
+    opacity: 0
+    bottom: 42%
+  to
+    opacity: 1
+    bottom: 47%
+
+// @keyframes for about animation
+
+@keyframes showArticle
+  from
+    clip-path: inset(0 0 100% 0)
+  to
+    clip-path: inset(0 0 0 0)
+
+@keyframes hideArticle
+  from
+    clip-path: inset(0 0 0 0)
+  to
+    clip-path: inset(0 0 100% 0)
+
+// @keyframes for brands slidong animation
+
+@keyframes pushContainer240
   from
     transform: translateX(0)
-    to
-      transform: translateX(-10px)
+  to
+    transform: translateX(-240px)
+
+@keyframes pushContainer225
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-225px)
+
+@keyframes pushContainer192
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-192px)
+
+@keyframes pushContainer120
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-120px)
+
+@keyframes pushContainer80
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-80px)
