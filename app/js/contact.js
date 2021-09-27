@@ -3,6 +3,7 @@ $(function() {
   $(document).ready(function(){
 
     $('.contact__form-button').click(function(){
+        $("#message_container").html("Sending...");
         // getting form data
         var user_name    = $('#form_name').val()
         var user_email   = $('#form_email').val()
@@ -13,24 +14,25 @@ $(function() {
           return
         }
         // отправляем данные
-        $.ajax({
-            url: "php/send.php", // php mail script
-            type: "post", // method
-            data: {
-                "name":    user_name,
-                "email":   user_email,
-                "message":   user_message,
-            },
-            error:function(){$("#message_container").html("An error has occurred. Please contact directly to lee@knellerdesign.com");},
-            // if error
-            beforeSend: function() {
-                $("#message_container").html("Your message is sending. Please wait...");
-            },
-            success: function(result){
-            // If ok
-                $('#message_container').html(result);
-                console.log("Mail was sent");
-            }
+        var data = {
+          service_id: 'service_q3hse16',
+          template_id: 'template_33jd72n',
+          user_id: 'user_IJB37yUREedGSRJFXNo4E',
+          template_params: {
+              'user_name': user_name,
+              'replyTo': user_email,
+              'message': user_message
+          }
+        };
+
+        $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json'
+        }).done(function() {
+          $("#message_container").html("Thank You! Message sent successfully")
+        }).fail(function(error) {
+          $("#message_container").html("Message failed to send, please contact to lee@knellerdesign.com")
         });
     });
   });
