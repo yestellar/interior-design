@@ -1,7 +1,37 @@
 .logo-container_kd
+  display: flex 
+  align-items: center
+  min-width: 190px
   .logo
     &-text
-      margin-left: 2px
+      color: #fff
+      margin-left: 5px
+      border-left: 1px solid #fff
+      padding-left: 5px
+      height: 28px
+      .top
+        display: block
+        text-transform: uppercase
+        font-family: 'Arial', sans-serif
+        font-size: 16px
+        letter-spacing: 0.8px
+        line-height: 16px
+        margin-bottom: 2px
+        margin-top: -1px
+      .bottom
+        display: block
+        font-family: 'Tahoma', cursive
+        font-style: italic
+        font-weight: 300
+        font-size: 12px
+        line-height: 12px
+
+.logo-container_kd--gallery
+  display: flex 
+  justify-content: center
+
+.logo-footer-small 
+  display: none
 
 @media screen and (max-width: 525px)
   .logo-container_kd--gallery
@@ -16,3 +46,10 @@
       height: 22px
       &-text
         width: 110px
+        display: none
+    .logo-footer-small
+      display: block 
+      font-size: 22px
+      margin-left: 5px 
+      padding-left: 5px 
+      border-left: 1px solid #fff
